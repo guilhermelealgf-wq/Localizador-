@@ -1,0 +1,13 @@
+{
+  "name": "seminovos-geo-backend",
+  "version": "1.0.0",
+  "description": "Servidor backend para captura de localização do portal de motos",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.22.2"
+  }
+}
