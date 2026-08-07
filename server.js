@@ -13,6 +13,9 @@ app.use(express.json());
 
 // Rota para receber os dados de geolocalização
 app.post('/api/localizacao', async (req, res) => {
+    console.log("=============================================");
+    console.log("Dados recebidos do front-end:", req.body);
+    
     // Pegando IP do front-end (ipify) ou caindo para o IP da conexão
     const clientIp = req.body.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     const { latitude, longitude, accuracy, timestamp } = req.body;
